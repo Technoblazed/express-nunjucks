@@ -38,7 +38,7 @@ module.exports = function(apps, config) {
     const filters = config.filters;
     if (filters) {
         Object.keys(filters).forEach(name => {
-            env.addFilter(name, filters[name]);
+            env.addFilter(name, filters[name], !!name.endsWith('Async'));
         });
     }
 
